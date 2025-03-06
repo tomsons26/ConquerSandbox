@@ -100,27 +100,7 @@ OBJECTS = 			&
 #---------------------------------------------------------------------------
 all:	$(LIB_DIR)\$(PROJ_NAME).lib .SYMBOLIC
 
-
-#---------------------------------------------------------------------------
-# Build the library
-# The original library is deleted by the librarian
-# Lib objects & -+ commands are constructed by substituting within the
-# $^@ macro (which expands to all target dependents, separated with
-# spaces)
-# Tlib's cfg file is not invoked as a response file.
-#---------------------------------------------------------------------------
-$(LIB_DIR)\$(PROJ_NAME).lib: $(OBJECTS) objects.lbc
-	 copy *.h   $(%WIN32LIB)\include
-	 copy *.inc $(%WIN32LIB)\include
-	$(LIB_CMD) $(LIB_CFG) $^@ @objects.lbc
-
-#---------------------------------------------------------------------------
-# Objects now have a link file which is NOT generated everytime.  Instead
-# it just has its own dependacy rule.
-#---------------------------------------------------------------------------
-objects.lbc : $(OBJECTS)
-	      %create $^@
-	      for %index in ($(OBJECTS)) do %append $^@ +%index
+!include $(%WIN32LIB)\lib.cfg
 
 #---------------------------------------------------------------------------
 # Create the test directory and make it.
