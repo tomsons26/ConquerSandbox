@@ -154,7 +154,7 @@ LIB_UPDATE =	&
 #		copies from the archive
 #---------------------------------------------------------------------------
 !include $(WIN32LIB)\project.cfg
-LIB_CMD = ..\code\watcom\binnt\wlib
+LIB_CMD = $(%WATCOM)\binnt\wlib
 VCS_UPDATE = update
 
 #---------------------------------------------------------------------------
@@ -184,7 +184,6 @@ all:	$(LIB_DIR)\$(LIB_NAME).lib .SYMBOLIC
 # $^@ macro (which expands to all target dependents, separated with
 # spaces)
 # Tlib's cfg file is not invoked as a response file.
-# All headers & source files are copied into WIN32LIB\SRCDEBUG, for debugging
 #---------------------------------------------------------------------------
 $(LIB_DIR)\$(LIB_NAME).lib: $(LIBS) libs.lbc
 	$(LIB_CMD) $(LIB_CFG) $^@ @libs.lbc
@@ -227,7 +226,6 @@ install_dirs: .SYMBOLIC
 	mkdir example
 	mkdir include
 	mkdir lib   
-	mkdir srcdebug
 	mkdir tools
 	cd tools  
 	copy $(%WWVCS)\tools\vcs.cfg

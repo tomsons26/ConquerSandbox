@@ -160,7 +160,6 @@ all:	$(LIB_NAME).lib
 # $^@ macro (which expands to all target dependents, separated with
 # spaces)
 # Tlib's cfg file is not invoked as a response file.
-# All headers & source files are copied into WWFLAT\SRCDEBUG, for debugging
 #---------------------------------------------------------------------------
 $(LIB_NAME).lib: $(LIBS)
 	del $<
@@ -210,7 +209,6 @@ install_dirs: .SYMBOLIC
 	mkdir example
 	mkdir include
 	mkdir lib
-	mkdir srcdebug
 	mkdir tools
 	cd tools
 	copy $(%WWVCS)\tools\vcs.cfg

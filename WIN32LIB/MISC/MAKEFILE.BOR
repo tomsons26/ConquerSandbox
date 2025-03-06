@@ -158,13 +158,10 @@ all:	$(LIB_DIR)\$(PROJ_NAME).lib
 # $^@ macro (which expands to all target dependents, separated with
 # spaces)
 # Tlib's cfg file is not invoked as a response file.
-# All headers & source files are copied into WIN32LIB\SRCDEBUG, for debugging
 #---------------------------------------------------------------------------
 $(LIB_DIR)\\$(PROJ_NAME).lib: $(OBJECTS) wwlib32.h
 	 copy *.h   $(WIN32LIB)\\include 
 	 copy *.inc $(WIN32LIB)\\include 
-	 copy *.cpp $(WIN32LIB)\\srcdebug 
-	 copy *.asm $(WIN32LIB)\\srcdebug 
 	$(LIB_CMD) $< $(LIB_CFG)  @&&| 
  +-crc.obj			&
 +-ddraw.obj			&

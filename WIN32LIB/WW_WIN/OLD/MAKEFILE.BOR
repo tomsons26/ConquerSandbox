@@ -149,13 +149,10 @@ all:	$(LIB_DIR)\$(PROJ_NAME).lib .SYMBOLIC
 # $^@ macro (which expands to all target dependents, separated with
 # spaces)
 # Tlib's cfg file is not invoked as a response file.
-# All headers & source files are copied into WWFLAT\SRCDEBUG, for debugging
 #---------------------------------------------------------------------------
 $(LIB_DIR)\$(PROJ_NAME).lib: $(OBJECTS) objects.lbc
 	 copy *.h   $(%WWFLAT)\include 
 	 copy *.inc $(%WWFLAT)\include 
-	 copy *.cpp $(%WWFLAT)\srcdebug 
-	 copy *.asm $(%WWFLAT)\srcdebug 
 	$(LIB_CMD) $(LIB_CFG) $^@ @objects.lbc
 
 #---------------------------------------------------------------------------
