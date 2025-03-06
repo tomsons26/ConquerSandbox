@@ -186,8 +186,8 @@ all:	$(LIB_DIR)\$(LIB_NAME).lib .SYMBOLIC
 # spaces)
 # Tlib's cfg file is not invoked as a response file.
 #---------------------------------------------------------------------------
-$(LIB_DIR)\$(LIB_NAME).lib: $(LIBS) libs.lbc
-	$(LIB_CMD) $(LIB_CFG) $^@ @libs.lbc
+$(LIB_DIR)\$(LIB_NAME).lib: $(LIBS) $(LIB_DIR)\libs.lbc
+	$(LIB_CMD) $(LIB_CFG) $^@ @$(LIB_DIR)\libs.lbc
 
 
 #---------------------------------------------------------------------------
@@ -205,7 +205,7 @@ $(LIBS):
 # Libs is librarian response file that is only genarated if any of the 
 # sublibrary in the golbal variable LIBS was updated.
 #---------------------------------------------------------------------------
-libs.lbc : $(LIBS)
+$(LIB_DIR)\libs.lbc : $(LIBS)
 	   %create $^@
 	   for %index in ($(LIBS)) do %append $^@ +$(LIB_DIR)\%index
 
