@@ -83,7 +83,12 @@ REM ############################
 REM COMPILE Win32Lib
 REM ############################
 cd WIN32LIB
-wmake /d
+
+REM first we need to update include dir in build
+wmake update
+
+REM only then we can build
+wmake all
 cd ..
 
 REM compile TD

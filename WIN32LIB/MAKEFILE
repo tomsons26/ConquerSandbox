@@ -272,7 +272,6 @@ update: $(LIB_UPDATE) .SYMBOLIC
 $(LIB_UPDATE): .SYMBOLIC
 	echo Updating $^&...
 	cd $^&
-	$(VCS_UPDATE) 
-	copy *.h $(LIB_DIR)\include
-	copy *.inc $(LIB_DIR)\include 
+	-copy *.h $(LIB_DIR)\include
+	-copy *.inc $(LIB_DIR)\include
 	cd ..

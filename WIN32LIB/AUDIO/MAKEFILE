@@ -73,7 +73,7 @@ OBJECTS = 				&
 		soundint.obj	&
 		soundlck.obj	&
 		soscodec.obj	&
-                olsosdec.obj    &
+		olsosdec.obj	&
 		auduncmp.obj
 
 
