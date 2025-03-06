@@ -45,6 +45,7 @@ mkdir BUILD\RA\OBJ
 
 mkdir BUILD\WIN32LIB
 mkdir BUILD\WIN32LIB\OBJ
+mkdir BUILD\WIN32LIB\INCLUDE
 
 mkdir BUILD\WINVQ
 mkdir BUILD\WINVQ\VQM32
@@ -82,7 +83,7 @@ REM ############################
 REM COMPILE Win32Lib
 REM ############################
 cd WIN32LIB
-wmake
+wmake /d
 cd ..
 
 REM compile TD

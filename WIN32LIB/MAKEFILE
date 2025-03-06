@@ -250,8 +250,8 @@ $(LIB_INSTALL):	.SYMBOLIC
 	cd $^&
 	copy $(%WWVCS)\$^&\vcs.cfg 
 	$(VCS_UPDATE) 
-	copy *.h ..\include
-	copy *.inc ..\include
+	copy *.h $(LIB_DIR)\include
+	copy *.inc $(LIB_DIR)\include
 	cd ..
 
 
@@ -273,6 +273,6 @@ $(LIB_UPDATE): .SYMBOLIC
 	echo Updating $^&...
 	cd $^&
 	$(VCS_UPDATE) 
-	copy *.h ..\include
-	copy *.inc ..\include 
+	copy *.h $(LIB_DIR)\include
+	copy *.inc $(LIB_DIR)\include 
 	cd ..
