@@ -64,6 +64,7 @@ WIN32LIB=$(%WIN32LIB)
 #===========================================================================
 LIB_NAME = win32lib
 LIB_DIR  = $(%BLDDIR)\WIN32LIB
+PROJ_DIR = .
 
 #---------------------------------------------------------------------------
 # LIBS macro: a list of all component libraries
