@@ -69,7 +69,6 @@
 
 PROJ_NAME   = mem
 PROJ_DIR    = $(%WWFLAT)\$(PROJ_NAME)
-LIB_DIR	    = $(%WWFLAT)\lib
 
 !include $(%WWFLAT)\project.cfg
 

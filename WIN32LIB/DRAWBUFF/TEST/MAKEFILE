@@ -69,7 +69,6 @@
 #---------------------------------------------------------------------------
 PROJ_NAME	= TEST
 PROJ_DIR		= $(%WIN32LIB)\drawbuff\TEST
-LIB_DIR		= $(%WIN32LIB)\lib
 
 !include $(%WIN32LIB)\project.cfg
 

@@ -65,7 +65,6 @@
 
 PROJ_NAME   = drawbuff
 PROJ_DIR    = $(%WIN32LIB)\$(PROJ_NAME)
-LIB_DIR     = $(%WIN32LIB)\lib
 
 !include $(%WIN32LIB)\project.cfg
 

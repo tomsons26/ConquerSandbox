@@ -63,7 +63,7 @@ WIN32LIB=$(%WIN32LIB)
 #	2. The directory VIDEO must be made before the SYSTEM directory.
 #===========================================================================
 LIB_NAME = win32lib
-LIB_DIR  = $(WIN32LIB)\lib
+LIB_DIR  = $(%BLDDIR)\WIN32LIB
 
 #---------------------------------------------------------------------------
 # LIBS macro: a list of all component libraries

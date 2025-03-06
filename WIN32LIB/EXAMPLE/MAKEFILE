@@ -75,7 +75,6 @@
 #---------------------------------------------------------------------------
 PROJ_NAME	= TEST
 PROJ_DIR	= $(%WWFLAT)\example\TEST
-LIB_DIR	        = $(%WWFLAT)\lib
 
 !include $(%WWFLAT)\project.cfg
 
