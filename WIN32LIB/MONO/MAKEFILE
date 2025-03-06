@@ -79,26 +79,6 @@ OBJECTS = 		&
 
 
 #---------------------------------------------------------------------------
-# Implicit rules
-# Compiler:
-# 	($< = full dependent with path)
-# Assembler:
-# 	output obj's are constructed from .obj: & the $& macro
-# 	($< = full dependent with path)
-# 	tasm's cfg file is not invoked as a response file.
-#---------------------------------------------------------------------------
-
-.c.obj:	$(%WIN32LIB)\project.cfg .AUTODEPEND
-	$(C_CMD) $(CC_CFG) $<
-
-.cpp.obj: $(%WIN32LIB)\project.cfg .AUTODEPEND
-	$(CPP_CMD) $(CC_CFG) $(PROJ_DIR)\$^*.cpp
-	$(CPP_CMD) $(CC_CFG) $(PROJ_DIR)\$^*.cpp
-.asm.obj: $(%WIN32LIB)\project.cfg
-	$(ASM_CMD) $(ASM_CFG) $<
-
-
-#---------------------------------------------------------------------------
 # Default target: configuration files & library (in that order)
 #---------------------------------------------------------------------------
 all:	$(LIB_DIR)\$(PROJ_NAME).lib .SYMBOLIC
