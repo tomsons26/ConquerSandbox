@@ -18,6 +18,8 @@ SET PATH=%windir%;%windir%\System32
 REM set path variable so these are accessable
 SET PATH=%WATCOM%\BINNT;%WATCOM%\BIN;%WATCOM%\BINW;%PATH%
 
+SET PATH=%TASM%\BIN;%PATH%
+
 REM set include paths
 SET INCLUDE=%WATCOM%\H\NT;%WATCOM%\H
 

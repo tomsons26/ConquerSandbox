@@ -74,17 +74,6 @@ OBJECTS = 		&
 					mouse.obj			&
 					wwmouse.obj
 
-#---------------------------------------------------------------------------
-# Path macros: one path for each file type.
-#	These paths are used to tell make where to find/put each file type.
-#---------------------------------------------------------------------------
-.asm:	$(PROJ_DIR)
-.c:	$(PROJ_DIR)
-.cpp:	$(PROJ_DIR)
-.h:	$(PROJ_DIR)
-.obj:	$(PROJ_DIR)
-.lib:	$(WIN32LIB)\lib
-.exe:	$(PROJ_DIR)
 
 #===========================================================================
 # Pre-defined section: there should be little need to modify this section.

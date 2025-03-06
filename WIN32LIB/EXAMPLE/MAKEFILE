@@ -91,19 +91,6 @@ PROJ_LIBS = 			&
 
 
 #---------------------------------------------------------------------------
-# Path macros: one path for each file type.
-#	These paths are used to tell make where to find/put each file type.
-#---------------------------------------------------------------------------
-.asm:	 $(PROJ_DIR)
-.c:   	 $(PROJ_DIR)
-.cpp:	 $(PROJ_DIR)
-.h:   	 $(PROJ_DIR)
-.obj:	 $(PROJ_DIR)
-.lib:	 $(%WWFLAT)\lib
-.exe:	 $(PROJ_DIR)
-
-
-#---------------------------------------------------------------------------
 # Include & library paths
 # If LIB & INCLUDE are already defined, they are used in addition to the
 # WWLIB32 lib & include; otherwise, they're constructed from
