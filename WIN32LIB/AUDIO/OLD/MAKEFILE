@@ -82,16 +82,6 @@ OBJECTS = 				&
 #===========================================================================
 
 #---------------------------------------------------------------------------
-# Include & library paths
-#	If LIB & INCLUDE are already defined, they are used in addition to the
-#	WWLIB32 lib & include; otherwise, they're constructed from
-#	BCDIR & TNTDIR
-#---------------------------------------------------------------------------
-LIBPATH	  	= $(%WIN32LIB)\LIB;$(%WATCOM)\LIB
-INCLUDEPATH	= $(%WIN32LIB)\INCLUDE;$(%WATCOM)\H
-
-
-#---------------------------------------------------------------------------
 # Implicit rules
 # Compiler:
 # 	($< = full dependent with path)

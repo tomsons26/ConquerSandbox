@@ -91,16 +91,6 @@ PROJ_LIBS = 			&
 
 
 #---------------------------------------------------------------------------
-# Include & library paths
-# If LIB & INCLUDE are already defined, they are used in addition to the
-# WWLIB32 lib & include; otherwise, they're constructed from
-# BCDIR
-#---------------------------------------------------------------------------
-
-LIBPATH	  	= $(%WWFLAT)\LIB;$(%WATCOM)\LIB
-INCLUDEPATH	= $(%WWFLAT)\INCLUDE;$(%WATCOM)\H
-
-#---------------------------------------------------------------------------
 # Implicit rules
 # Compiler:
 # 	($< = full dependent with path)

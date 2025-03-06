@@ -114,16 +114,6 @@ LIB_CMD	  	= tlib
 LINK_CMD  	= tlink32
 ASM_CMD	  	= tasm
 
-#---------------------------------------------------------------------------
-# Include & library paths
-# If LIB & INCLUDE are already defined, they are used in addition to the
-# WWLIB32 lib & include; otherwise, they're constructed from
-# BCDIR
-#---------------------------------------------------------------------------
-
-LIBPATH	  	= $(WIN32LIB)\LIB;$(COMPILER)\LIB
-INCLUDEPATH	= $(WIN32LIB)\INCLUDE;$(COMPILER)\INCLUDE
-
 !include $(WIN32LIB)\\project.cfg
 
 #---------------------------------------------------------------------------
