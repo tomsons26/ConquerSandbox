@@ -112,15 +112,6 @@ PROJ_LIBS =	&
 
 
 #---------------------------------------------------------------------------
-# Tools/commands
-#---------------------------------------------------------------------------
-C_CMD	  	= wcc386
-CPP_CMD	  	= wpp386
-LIB_CMD	  	= wlib
-LINK_CMD  	= wlink
-ASM_CMD	  	= tasm
-
-#---------------------------------------------------------------------------
 # Include & library paths
 # If LIB & INCLUDE are already defined, they are used in addition to the
 # WWLIB32 lib & include; otherwise, they're constructed from

@@ -21,6 +21,10 @@ SET PATH=%WATCOM%\BINNT;%WATCOM%\BIN;%WATCOM%\BINW;%PATH%
 REM set include paths
 SET INCLUDE=%WATCOM%\H\NT;%WATCOM%\H
 
+REM set library include paths
+SET WIN32LIB=%ROOT%\WIN32LIB
+SET WINVQ=%ROOT%\WINVQ
+
 REM ############################
 REM BUILD DIR SETUP
 REM ############################
@@ -53,7 +57,9 @@ REM ############################
 REM COMPILATION
 REM ############################
 
-REM compile WWIPX
+REM ############################
+REM COMPILE WWIPX
+REM ############################
 
 REM ############################
 REM COMPILE WinVQ
@@ -70,7 +76,12 @@ cd ..
 
 cd ..
 
-REM compile Win32Lib
+REM ############################
+REM COMPILE Win32Lib
+REM ############################
+cd WIN32LIB
+wmake
+cd ..
 
 REM compile TD
 
