@@ -18,6 +18,9 @@ SET PATH=%windir%;%windir%\System32
 REM set path variable so these are accessable
 SET PATH=%WATCOM%\BINNT;%WATCOM%\BIN;%WATCOM%\BINW;%PATH%
 
+REM set include paths
+SET INCLUDE=%WATCOM%\H\NT;%WATCOM%\H
+
 REM ############################
 REM BUILD DIR SETUP
 REM ############################
@@ -52,7 +55,20 @@ REM ############################
 
 REM compile WWIPX
 
-REM compile WinVQ
+REM ############################
+REM COMPILE WinVQ
+REM ############################
+cd WINVQ
+
+cd VQM32
+wmake
+cd ..
+
+cd VQA32
+wmake
+cd ..
+
+cd ..
 
 REM compile Win32Lib
 

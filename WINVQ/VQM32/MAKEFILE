@@ -48,8 +48,8 @@
 
 PRJ		= ..
 PRJNAME = vqm32wp
-PRJDIR  = $(PRJ)\VQM32
-WATCOM	= c:\watcom
+PRJDIR  = $(%BLDDIR)\WINVQ\VQM32
+WATCOM	= $(%WATCOM)
 
 OBJECTS = &
 	iff.obj &
@@ -106,8 +106,8 @@ path_cpp = .\
 path_h   = .\
 path_asm = .\
 path_i   = .\
-path_obj = .\O
-path_lib = $(PRJ)\LIB
+path_obj = $(PRJDIR)\OBJ
+path_lib = $(PRJDIR)
 path_exe = .\
 
 #----------------------------------------------------------------------------
@@ -115,7 +115,7 @@ path_exe = .\
 #----------------------------------------------------------------------------
 
 .EXTENSIONS :
-.EXTENSIONS : .exe .lib .obj .c .cpp .asm .h .i
+.EXTENSIONS : .exe .lib .obj .c .cpp .asm .h .i .err
 
 .c : $(path_c)
 .cpp : $(path_cpp)
@@ -125,6 +125,7 @@ path_exe = .\
 .obj : $(path_obj)
 .lib : $(path_lib)
 .exe : $(path_exe)
+.err : $(path_obj)
 
 #----------------------------------------------------------------------------
 # TOOLS, COMMANDS AND CONFIGURATIONS
@@ -132,7 +133,7 @@ path_exe = .\
 
 CC_CMD   = wcc386
 CCP_CMD  = wpp386
-ASM_CMD  = tasm32
+ASM_CMD  = $(%UTILS)\tasm32
 LINK_CMD = wlink
 LIB_CMD  = wlib
 
@@ -154,11 +155,11 @@ $(PRJNAME).lib : $(OBJECTS) .SYMBOLIC
 #----------------------------------------------------------------------------
 
 .c.obj :
-  $(CC_CMD) $(CC_OPTS) -fo=$(PATH_OBJ)\$^. $<
+  $(CC_CMD) $(CC_OPTS) -fr=$(PATH_OBJ)\$^&.err -fo=$(PATH_OBJ)\$^. $<
 	$(LIB_CMD) $(LIB_OPTS) $(path_lib)\$(PRJNAME).lib -+$(path_obj)\$]&
 
 .cpp.obj :
-  $(CCP_CMD) $(CC_OPTS) -fo=$(PATH_OBJ)\$^. $<
+  $(CCP_CMD) $(CC_OPTS) -fr=$(PATH_OBJ)\$^&.err -fo=$(PATH_OBJ)\$^. $<
 	$(LIB_CMD) $(LIB_OPTS) $(path_lib)\$(PRJNAME).lib -+$(path_obj)\$]&
 
 .asm.obj:
